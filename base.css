@@ -1,1 +1,98 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light grey background */
+}
+
+header {
+    background-color: #343a40; /* Dark background for header */
+    color: #fff; /* White text color */
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #f8f9fa; /* Light grey background for navigation */
+    padding: 20px;
+}
+
+.nav-container {
+    max-width: 960px; /* Limit the width of the navigation */
+    margin: 0 auto; /* Center the navigation */
+    padding: 0;
+    list-style: none; /* Remove bullet points */
+    text-align: center;
+}
+
+.nav-container li {
+    display: inline-block;
+    margin-right: 10px; /* Add spacing between navigation items */
+}
+
+.nav-container li:last-child {
+    margin-right: 0; /* Remove margin from last navigation item */
+}
+
+.nav-container a {
+    text-decoration: none;
+    color: #343a40; /* Dark text color */
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.nav-container a:hover {
+    color: #007bff; /* Blue color on hover */
+}
+
+/* Content Section */
+#about {
+    padding: 50px 20px; /* Add padding to top and bottom */
+    text-align: left;
+    background-color: #f2f2f2; /*Light grey background*/
+}
+
+#about img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 30px; /* Add margin at the bottom */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+h2 {
+    font-size: 24px;
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.email-link {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.email-link:hover {
+    color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: #fff; /* White text color */
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
 
