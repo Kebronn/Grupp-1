@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcement Form</title>
+</head>
+<body>
+    <h1>Announcement Form</h1>
+    <button id="make-announcement-button">Make Announcement</button>
+
+    <form id="announcement-form" style="display: none;">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="role">Role:</label>
+            <select id="role" name="role" required>
+                <option value="arbetsokande">Arbetssökande</option>
+                <option value="arbetsgivare">Arbetsgivare</option>
+            </select>
+        </div>
+        <div>
+            <label for="announcement">Announcement:</label>
+            <textarea id="announcement" name="announcement" rows="4" required></textarea>
+        </div>
+        <button type="submit">Submit Announcement</button>
+    </form>
+
+    <h2>Announcements</h2>
+    <ul id="announcement-list"></ul>
+
+    <script>
+        document.getElementById("make-announcement-button").addEventListener("click", function() {
+            // Show the announcement form when the button is clicked
+            document.getElementById("announcement-form").style.display = "block";
+        });
+
+        document.getElementById("announcement-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Get form data
+            var name = document.getElementById("name").value;
+            var role = document.getElementById("role").value;
+            var announcement = document.getElementById("announcement").value;
+            var date = new Date().toLocaleDateString();
+
+            // Display the announcement
+            displayAnnouncement(name, role, announcement, date);
+
+            // Clear form fields
+            document.getElementById("name").value = "";
+            document.getElementById("announcement").value = "";
+
+            // Hide the form after submission
+            document.getElementById("announcement-form").style.display = "none";
+        });
+
+        function displayAnnouncement(name, role, announcement, date) {
+            // Create list item elements for each part of the announcement
+            var listItem = document.createElement("li");
+            var nameRoleDiv = document.createElement("div");
+            var announcementDiv = document.createElement("div");
+            var dateDiv = document.createElement("div");
+
+            // Add name and role to the nameRoleDiv
+            nameRoleDiv.textContent = "Name: " + name + ", Role: " + role;
+
+            // Add announcement text to the announcementDiv
+            announcementDiv.textContent = "Announcement: " + announcement;
+
+            // Add date to the dateDiv
+            dateDiv.textContent = "Date: " + date;
+
+            // Append the divs to the list item
+            listItem.appendChild(nameRoleDiv);
+            listItem.appendChild(announcementDiv);
+            listItem.appendChild(dateDiv);
+
+            // Add the list item to the announcement list
+            document.getElementById("announcement-list").appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
 
