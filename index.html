@@ -10,7 +10,7 @@
     <div class="login-container">
         <h2>Login</h2>
         <p>Welcome! Please select your role below to login.</p>
-        <form id="login-form" method="post">
+        <form id="login-form" action="/login" method="post">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label for="role">Role:</label><br>
-                <select id="role" name="role">
+                <select id="role" name="role" required>
                     <option value="arbetsokande">Arbetssökande</option>
                     <option value="arbetsgivare">Arbetsgivare</option>
                 </select>
